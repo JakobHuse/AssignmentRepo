@@ -1,6 +1,6 @@
 My groupmembers are:
-- Jakob Huse
 - Benjamin Ruiz
+- Jakob Huse
 - Logan Hunyh
 - Danielle Macklin
 - Sean Boyer
