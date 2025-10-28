@@ -13,5 +13,5 @@ class CreateUserForm(UserCreationForm):
             'email',
             'user_type',
             'medical_license_number',
-            'state'
+            'state',
         ]
