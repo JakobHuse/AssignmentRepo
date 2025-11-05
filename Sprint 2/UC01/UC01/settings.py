@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "accounts", #tells django the accounts directory is an app
+    "medication",
 ]
 
 MIDDLEWARE = [
