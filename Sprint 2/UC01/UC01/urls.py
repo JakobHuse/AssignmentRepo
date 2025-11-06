@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("accounts.urls")), #django looks for urls top to bottom so we want sign up page first
     path("accounts/", include("django.contrib.auth.urls")), #creates url path for accounts
+    path("medication/", include("medication.urls", namespace="medication")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"), #creates url path for homepage after login
 ]
