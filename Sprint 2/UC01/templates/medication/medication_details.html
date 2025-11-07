@@ -1,0 +1,13 @@
+{% block content %}
+
+<h2>{{ medication.name }}</h2>
+
+<ul>
+ <li>Dosage: {{ medication.dosage }}</li>
+ <li>Description: {{ medication.description }}</li>
+</ul>
+
+<p><a href="{% url 'medication:home' %}">Back</a></p>
+
+
+{% endblock %}

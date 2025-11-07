@@ -1,0 +1,15 @@
+<h1>Add New Medication</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }} {# Renders form fields as paragraphs #}
+    <button type="submit">Add Item</button>
+</form>
+
+<h2>Current Medications</h2>
+<ul>
+    {% for item in items %}
+        <li>{{ item.name }} - {{ item.description }}</li>
+    {% empty %}
+        <li>No items yet.</li>
+    {% endfor %}
+</ul>
