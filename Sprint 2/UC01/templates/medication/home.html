@@ -3,10 +3,13 @@
     <title>My List</title>
 </head>
 <body>
-    <h1>My Items</h1>
+    <h1>My Medication</h1>
     <ul>
         {% for item in items %} {# 'items' is the key from the context dictionary #}
-            <li><a href="{% url 'medication:detail' item.id %}">{{ item.name }}</a></li>
+            <li>
+                <a href="{% url 'medication:detail' item.id %}">{{ item.name }}</a>
+                - <a href="{% url 'medication:update' item.id %}">[edit]</a>
+            </li>
         {% endfor %}
 
         <p><a href="{% url 'medication:add' %}">Add Medication</a></p>

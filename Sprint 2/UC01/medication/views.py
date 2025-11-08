@@ -28,5 +28,27 @@ def medication_detail(request, id):
     medication = patient_medication.objects.get(id=id)
     return render(request, 'medication/medication_details.html', {'medication': medication})
 
-#def delete_medication(request):
+def update(request, id):
+    medication = patient_medication.objects.get(id=id)
+    
+    if request.method == 'POST':
+        form = MedicationForm(instance=medication) # prepopulate the form with an existing medication
+        if form.is_valid():
+            medication_instance = form.save(commit=False)
+            medication_instance.user = request.user            
+            medication_instance.save() # Saves the new item to the database
+            return redirect('medication:detail', medication.id) # Redirect to a view displaying the list
+    else:
+        form = MedicationForm(instance=medication)
+    return render(request,'medication/update.html',{'form': form})
+
+
+def delete(request, id):
+    medication = patient_medication.objects.get(id=id)
+    
+    if request.method == 'POST':
+        medication.delete()
+        return redirect('medication:home')
+
+    return render(request, 'medication/delete.html', {'medication': medication})
     

@@ -5,8 +5,12 @@
 <ul>
  <li>Dosage: {{ medication.dosage }}</li>
  <li>Description: {{ medication.description }}</li>
+ <li>Frequency: {{ medication.frequency }}</li>
+ <li>Reminder Method: {{ medication.reminder_type }}</li>
 </ul>
 
+<p><a href="{% url 'medication:update' medication.id %}">Edit this medication</a></p>
+<p><a href="{% url 'medication:delete' medication.id %}">Delete this medication</a></p>
 <p><a href="{% url 'medication:home' %}">Back</a></p>
 
 
