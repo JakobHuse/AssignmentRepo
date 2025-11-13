@@ -32,7 +32,7 @@ def update(request, id):
     medication = patient_medication.objects.get(id=id)
     
     if request.method == 'POST':
-        form = MedicationForm(instance=medication) # prepopulate the form with an existing medication
+        form = MedicationForm(request.POST, instance=medication) # prepopulate the form with an existing medication
         if form.is_valid():
             medication_instance = form.save(commit=False)
             medication_instance.user = request.user            
