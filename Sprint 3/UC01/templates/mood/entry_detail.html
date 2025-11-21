@@ -1,0 +1,9 @@
+{% block content %}
+
+ <h1>Date: {{ mood.date }}</h1>
+ <li>Description of Mood:</li>
+<p>{{ mood.description|wordwrap:50|linebreaksbr }}</p>
+<p><a href="{% url 'mood:list' %}">Back</a></p>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Previous Entries</title>
+</head>
+<body>
+    <h1>Previous Entries</h1>
+    <ul>
+        {% for item in items %} {# 'items' is the key from the context dictionary #}
+            <li>
+                <a href="{% url 'mood:detail' item.id %}">{{ item.date }}</a>
+            </li>
+        {% endfor %}
+
+        <p><a href="{% url 'mood:home' %}">Back</a></p>
+
+    </ul>
+</body>
+</html>
