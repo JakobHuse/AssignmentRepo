@@ -17,7 +17,8 @@ def add_mood_entry(request):
             return redirect('mood:home') # Redirect to a view displaying the list
     else:
         form = MoodForm()
-        return render(request, 'mood/add_entry.html', {'form': form})
+    
+    return render(request, 'mood/add_entry.html', {'form': form})
 
 
 def mood_list(request):
